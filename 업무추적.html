@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>비서실 업무 추적</title>
+<meta name="theme-color" content="#1f3a5f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="업무추적">
+
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAVeSURBVHhe7d2/i1xVGMZx/xM7OzsrbcRCsBAEC7FxG1OIwcI0QTCgCIoIIc1aSEBEQbQIiBZBEMUiNqYIiiApFCGFpkgQQW2uPMNGluXMzo97zrnv+5zvgU8TmLmB/WZ255nszH33P3wwAS4IGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGlYIGivPvfzOdPnjq9PNX25NOj/+/Ot07fpP08XLV6YHH3+heJuICHpwivXqN9+vIl537v751/TapY+Kt4+GoAf22LPn/39E3uboEbx0P5EQ9KD0yPzbrT+OUt3+nL1wWLy/KAh6QA88+vzq5+N9zt///Bv6Z2qCHtCHV746ynO/E/lRmqAHoyd3c8+nX3xbvO8ICHogmuZqHP3sXbr/CAh6EFo0NL/VOPr5u3SNCAh6APsuGuvOZ19+V7xOBARtbs6ise4cfvB58VoRELS5uYvGyfP77TurfySla0VA0MZqLBonT/SXwAnaVK1F4/i5/sPN0I/OQtCGai4a946eVD705EvF60VC0GZqLxo6ern7iYNXi9eLhqCNtFg0dM6cv1S8XkQEbaT2oqHz1rufFK8VFUGbaLFoRH4BZR2CNjDqolFC0MmNvGiUEHRioy8aJQSdFItGGUEnxaJRRtAJsWisR9DJsGicjqATYdHYjKCTYNHYDkEnwKKxPYJOgEVjewQdHIvGbgg6MBaN3RF0UCwa+yHogFg09pcyaH3L1DN0vbv819durBYAvXfxK2+/Pz3y9LnibbJg0ZgnXdBPnXn91Dfp1iNR5mfwLBrzpAp6l2f8evKjb92l+4mKRWO+NEHrkXnXow++yRI1i0YdKYLWF2WXzwI5fjJEzaJRT4qgz73x3tGXab8TOWoWjbpSBK0FY+6JGDWLRn0pgtY0V+NEi5pFo74UQSvEWidK1CwabaQIWl+ommfpqFk02kkRtL6N1j5LRc2i0VaKoPWMvcXpHbWuxaLRVoqgRZ/r0eL0ippFo480Qc95cWXT6RE1i0YfaYIW/U+62t+y752WUbNo9JMqaMkWNYtGX+mClixRs2j0lzJoiR61bl/778eisVnaoCVq1Cway0kdtESMmkVjOemDlkhRs2gsyyJoiRA1i8bybIKWJaNm0YjBKmhZImr9We1rsmjsxy5o6Rk1i0YslkFLr6hZNGKxDVpaR613bqp9WDTmsQ5aWkZd+7BozGcftGSIWn8/Fo35hghaIkfNolHPMEFL1KhZNOoZKmiJFjWLRl3DBS1RombRqG/IoGXpqFk02hg2aFkqal2TRaONoYOW3lGzaLQ1fNDSM2oWjbYI+kiPqFk02iPoY1pGzaLRB0Gf0CJqFo1+CLqgZtS6HxaNfgh6jRpRs2j0R9CnmBs1i0Z/BL3BvlGzaCyDoLegqHd5K1+9N0fpftAeQW9JK8WmN13X2xg88+KbxdujD4LekT6iWb9LqI+a0+8V6pFbvyh79sIha0YABA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0rBA0jB9N/T34HWASEOVYAAAAASUVORK5CYII=">
+<style>
+:root{--bg:#f4f6f9;--card:#fff;--ink:#1c2430;--mute:#6b7685;--line:#e1e5eb;--main:#1f3a5f;--red:#c62828;--amber:#b26a00;--blue:#1565c0;--green:#2e7d32}
+@media(prefers-color-scheme:dark){:root{--bg:#12161c;--card:#1b222b;--ink:#e8ecf1;--mute:#93a0b0;--line:#2b3441;--main:#6fa0dc;--red:#ef6f6f;--amber:#e0a040;--blue:#6fa8f0;--green:#6fcf80}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 -apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+[hidden]{display:none!important}
+#app{max-width:760px;margin:0 auto;padding:0 12px 84px}
+header{display:flex;align-items:center;justify-content:space-between;padding:14px 4px 6px;padding-top:max(14px,env(safe-area-inset-top))}
+h1{font-size:20px;margin:0}
+input,select,textarea,button{font:inherit;color:inherit}
+input,select,textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--card)}
+textarea{min-height:90px}
+button{border:1px solid var(--line);background:var(--card);border-radius:10px;padding:9px 12px;cursor:pointer}
+button.primary{background:var(--main);color:#fff;border-color:var(--main)}
+@media(prefers-color-scheme:dark){button.primary{color:#0c1118}}
+button.danger{color:var(--red)}
+button.icon{font-size:20px;padding:4px 10px}
+#quick{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px;margin:8px 0 14px}
+#quick .row{display:flex;gap:8px;margin-top:8px;align-items:center;flex-wrap:wrap}
+#quick .row input[type=date]{flex:1 1 130px}#quick .row input:not([type]){flex:1 1 110px}
+.chk{display:flex;align-items:center;gap:4px;white-space:nowrap;font-size:14px}.chk input{width:auto}
+section{margin:0 0 18px}
+section h2{font-size:15px;margin:0 0 6px;display:flex;gap:6px;align-items:center}
+section h2 .n{background:var(--main);color:#fff;border-radius:99px;padding:0 8px;font-size:12px}
+section.red h2{color:var(--red)}section.amber h2{color:var(--amber)}section.blue h2{color:var(--blue)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:8px}
+.card .t{font-weight:600;cursor:pointer;word-break:break-word}
+.badges{display:flex;flex-wrap:wrap;gap:5px;margin:5px 0}
+.b{font-size:12px;border:1px solid var(--line);border-radius:99px;padding:1px 8px;color:var(--mute)}
+.b.red{color:var(--red);border-color:var(--red)}.b.amber{color:var(--amber);border-color:var(--amber)}.b.blue{color:var(--blue);border-color:var(--blue)}.b.green{color:var(--green);border-color:var(--green)}
+.acts{display:flex;gap:6px;flex-wrap:wrap}.acts button{font-size:13px;padding:5px 10px}
+.empty{color:var(--mute);font-size:14px;padding:6px 2px}
+nav{position:fixed;left:0;right:0;bottom:0;display:flex;background:var(--card);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+nav button{flex:1;border:0;border-radius:0;background:none;padding:14px 0;color:var(--mute)}nav button.on{color:var(--main);font-weight:700}
+dialog{width:min(560px,100vw);max-height:92vh;border:0;border-radius:16px;padding:0;background:var(--bg);color:var(--ink)}
+dialog::backdrop{background:#0008}
+#sheetForm{padding:14px;display:grid;gap:10px}
+#sheetForm label{font-size:13px;color:var(--mute);display:grid;gap:3px}
+#sheetForm .g2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.hist{font-size:13px;border-top:1px solid var(--line);padding-top:8px}.hist div{padding:3px 0;color:var(--mute)}.hist b{color:var(--ink);font-weight:600}
+.bar{display:flex;gap:6px;flex-wrap:wrap}
+#login{min-height:100vh;display:grid;place-items:center;padding:20px}#loginForm{display:grid;gap:10px;width:min(340px,100%)}
+.err{color:var(--red);font-size:14px;margin:0}
+#demoBar{background:#fff3cd;color:#5c4400;padding:8px 10px;font-size:13px;margin:0 -12px}
+#toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:#222;color:#fff;padding:8px 14px;border-radius:99px;font-size:14px;opacity:0;transition:.2s;pointer-events:none}#toast.show{opacity:.95}
+.set{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:10px;display:grid;gap:8px}
+.set p{margin:0;color:var(--mute);font-size:14px}
+</style>
+</head>
+<body>
+<div id="login" hidden>
+  <form id="loginForm">
+    <h1>비서실 업무 추적</h1>
+    <input id="lEmail" type="email" placeholder="이메일" autocomplete="username" required>
+    <input id="lPw" type="password" placeholder="비밀번호" autocomplete="current-password" required>
+    <button class="primary">로그인</button>
+    <p id="lErr" class="err"></p>
+  </form>
+</div>
+
+<div id="app" hidden>
+  <div id="demoBar" hidden>체험 모드: 이 기기 브라우저에만 저장됩니다. 파일 위쪽 APP_CONFIG에 Firebase 설정을 넣으면 실제 모드가 됩니다.</div>
+  <header>
+    <h1 id="title">오늘</h1>
+    <button id="btnRefresh" class="icon" title="새로고침">⟳</button>
+  </header>
+
+  <form id="quick">
+    <input id="qTitle" placeholder="업무 한 줄 입력 후 Enter" required>
+    <div class="row">
+      <input id="qDue" type="date" title="처리기한">
+      <input id="qWho" placeholder="담당자(타 직원)" list="whoList">
+      <label class="chk"><input id="qCeo" type="checkbox" checked> 대표 지시</label>
+      <button class="primary">추가</button>
+    </div>
+  </form>
+  <datalist id="whoList"></datalist>
+
+  <main id="view"></main>
+
+  <nav>
+    <button data-tab="home" class="on">오늘</button>
+    <button data-tab="all">전체</button>
+    <button data-tab="closed">종결</button>
+    <button data-tab="settings">설정</button>
+  </nav>
+</div>
+
+<dialog id="sheet"><form method="dialog" id="sheetForm"></form></dialog>
+<div id="toast"></div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script>
+// Firebase 콘솔 > 프로젝트 설정 > 내 앱(웹) 에서 firebaseConfig 값을 복사해 넣으세요.
+// 이 값은 공개되어도 괜찮습니다(보호는 Firestore 보안 규칙이 담당).
+window.APP_CONFIG = {
+  FIREBASE: {
+    apiKey: "",
+    authDomain: "",
+    projectId: "",
+    appId: ""
+  },
+  STALE_DAYS: 7   // 이 일수 이상 확인하지 않으면 '장기 미확인'
+};
+</script>
+<script>
+"use strict";
+const CFG = window.APP_CONFIG || {};
+const DEMO = !(CFG.FIREBASE && CFG.FIREBASE.apiKey && CFG.FIREBASE.projectId);
+const STALE = CFG.STALE_DAYS || 7;
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+/* ---------- 날짜 ---------- */
+const pad = (n) => String(n).padStart(2, "0");
+const ymd = (d) => `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+const today = () => ymd(new Date());
+const dayNum = (s) => Math.round(new Date(s + "T00:00:00").getTime() / 864e5);
+const daysSince = (iso) => (iso ? dayNum(today()) - dayNum(ymd(new Date(iso))) : null);
+const fmtDT = (iso) => { const d = new Date(iso); return `${d.getMonth() + 1}/${d.getDate()} ${pad(d.getHours())}:${pad(d.getMinutes())}`; };
+
+/* ---------- 업무 생성/변경 규칙 (이력 자동 계산) ---------- */
+const nowIso = () => new Date().toISOString();
+const newTask = (o) => ({ detail: "", source: "ceo", assignee_name: "", assignee_user_id: null, directive_date: null, due_date: null, next_check_date: null,
+  last_checked_at: null, status: "todo", completed_at: null, closed_at: null, report_required: false, reported_at: null, deleted_at: null,
+  created_at: nowIso(), updated_at: nowIso(), ...o });
+function applyUpdate(old, p) {
+  const n = { ...old, ...p, updated_at: nowIso() };
+  if (n.status === "done" && old.status !== "done") n.completed_at = nowIso();
+  if (n.status !== "done") { n.completed_at = null; n.closed_at = null; }
+  const ch = {};
+  for (const k of ["title", "status", "due_date", "next_check_date", "assignee_name", "source", "directive_date", "report_required"]) if ((n[k] ?? null) !== (old[k] ?? null)) ch[k] = [old[k] ?? null, n[k] ?? null];
+  if (n.detail !== old.detail) ch.detail = true;
+  const has = Object.keys(ch).length; let ty = null;
+  if (n.deleted_at && !old.deleted_at) ty = "deleted";
+  else if (n.closed_at && !old.closed_at) ty = "closed";
+  else if (!n.closed_at && old.closed_at && n.status === "done") ty = "reopened";
+  else if (n.status === "done" && old.status !== "done") ty = "completed";
+  else if (old.status === "done" && n.status !== "done") ty = "uncompleted";
+  else if ((n.reported_at ?? null) !== (old.reported_at ?? null)) ty = "report";
+  else if (!has && (n.last_checked_at ?? null) !== (old.last_checked_at ?? null)) ty = "checked";
+  else if (has) ty = "updated";
+  return { n, ty, ch };
+}
+
+/* ---------- 저장소: 실제(Firebase) / 체험(localStorage) ---------- */
+let auth = null, db = null, ORG = null;
+const Remote = {
+  async _org() {
+    if (ORG) return ORG;
+    const s = await db.doc("members/" + auth.currentUser.uid).get();
+    if (!s.exists) throw new Error("승인되지 않은 계정입니다. README의 '계정 승인' 단계를 확인하세요.");
+    return (ORG = s.data().orgId);
+  },
+  _col() { return db.collection("orgs/" + ORG + "/tasks"); },
+  session() {
+    return new Promise((res) => { const un = auth.onAuthStateChanged(async (u) => { un(); if (!u) return res(false); try { await this._org(); res(true); } catch (e) { toast(e.message); res(false); } }); });
+  },
+  async login(email, pw) { await auth.signInWithEmailAndPassword(email, pw); try { await this._org(); } catch (e) { await auth.signOut(); throw e; } },
+  async logout() { await auth.signOut(); },
+  async list() {
+    await this._org(); const s = await this._col().get();
+    return s.docs.map((d) => ({ ...d.data(), id: d.id })).filter((t) => !t.deleted_at).sort((a, b) => b.created_at.localeCompare(a.created_at));
+  },
+  _evDoc(ref, type, changes, note) { return [ref.collection("events").doc(), { task_id: ref.id, type, changes: changes || {}, note: note || "", user_id: auth.currentUser.uid, created_at: nowIso() }]; },
+  async create(o) {
+    await this._org(); const ref = this._col().doc(); const r = newTask({ ...o, created_by: auth.currentUser.uid });
+    const b = db.batch(); b.set(ref, r); b.set(...this._evDoc(ref, "created", { title: r.title })); await b.commit(); return { ...r, id: ref.id };
+  },
+  async update(id, p) {
+    await this._org(); const ref = this._col().doc(id); const old = { ...(await ref.get()).data(), id };
+    const { n, ty, ch } = applyUpdate(old, p); delete n.id;
+    const b = db.batch(); b.set(ref, n); if (ty) b.set(...this._evDoc(ref, ty, ch)); await b.commit(); return { ...n, id };
+  },
+  async events(id) { await this._org(); const s = await this._col().doc(id).collection("events").get(); return s.docs.map((d) => d.data()).sort((a, b) => b.created_at.localeCompare(a.created_at)); },
+  async note(id, text) { await this._org(); const ref = this._col().doc(id); const [d, v] = this._evDoc(ref, "note", {}, text); await d.set(v); },
+  async exportAll() {
+    await this._org(); const s = await this._col().get(); const tasks = s.docs.map((d) => ({ ...d.data(), id: d.id })); const events = [];
+    await Promise.all(s.docs.map(async (d) => (await d.ref.collection("events").get()).docs.forEach((e) => events.push(e.data()))));
+    return { exported_at: nowIso(), tasks, events };
+  },
+};
+
+const Demo = {
+  _t() { return JSON.parse(localStorage.getItem("demo_tasks") || "[]"); },
+  _e() { return JSON.parse(localStorage.getItem("demo_events") || "[]"); },
+  _ev(task_id, type, changes = {}, note = "") { const e = this._e(); e.push({ task_id, type, changes, note, created_at: nowIso() }); localStorage.setItem("demo_events", JSON.stringify(e)); },
+  async session() { return true; }, async login() {}, async logout() {},
+  async list() { return this._t().filter((t) => !t.deleted_at).reverse(); },
+  async create(o) { const t = this._t(); const r = newTask({ id: crypto.randomUUID(), ...o }); t.push(r); localStorage.setItem("demo_tasks", JSON.stringify(t)); this._ev(r.id, "created", { title: r.title }); return r; },
+  async update(id, p) {
+    const t = this._t(); const i = t.findIndex((x) => x.id === id); const { n, ty, ch } = applyUpdate(t[i], p);
+    t[i] = n; localStorage.setItem("demo_tasks", JSON.stringify(t)); if (ty) this._ev(id, ty, ch); return n;
+  },
+  async events(id) { return this._e().filter((e) => e.task_id === id).reverse(); },
+  async note(id, text) { this._ev(id, "note", {}, text); },
+  async exportAll() { return { exported_at: nowIso(), tasks: this._t(), events: this._e() }; },
+};
+const store = DEMO ? Demo : Remote;
+if (!DEMO) { firebase.initializeApp(CFG.FIREBASE); auth = firebase.auth(); db = firebase.firestore(); db.settings({ ignoreUndefinedProperties: true }); }
+
+/* ---------- 상태 ---------- */
+let tasks = [], tab = "home";
+const isClosed = (t) => !!t.closed_at;
+const isDone = (t) => t.status === "done";
+const needReport = (t) => t.report_required && !t.reported_at && !isClosed(t);
+const staleDays = (t) => daysSince(t.last_checked_at || t.created_at);
+const SRC = { ceo: "대표 지시", self: "내 업무", other: "기타" };
+const ST = { todo: "접수", doing: "진행중", waiting: "회신대기", done: "완료" };
+
+function toast(m) { const e = $("#toast"); e.textContent = m; e.classList.add("show"); clearTimeout(toast._t); toast._t = setTimeout(() => e.classList.remove("show"), 2200); }
+async function run(fn) { try { await fn(); } catch (e) { toast("오류: " + (e.message || e)); console.error(e); } }
+
+async function load() { tasks = await store.list(); render(); }
+
+/* ---------- 분류 ---------- */
+function buckets() {
+  const td = today(); const open = tasks.filter((t) => !isClosed(t) && !isDone(t));
+  const used = new Set(); const pick = (arr) => arr.filter((t) => !used.has(t.id) && used.add(t.id));
+  const overdue = pick(open.filter((t) => t.due_date && t.due_date < td).sort((a, b) => a.due_date.localeCompare(b.due_date)));
+  const todayList = pick(open.filter((t) => t.due_date === td || (t.next_check_date && t.next_check_date <= td)));
+  const stale = pick(open.filter((t) => staleDays(t) >= STALE).sort((a, b) => staleDays(b) - staleDays(a)));
+  const report = tasks.filter(needReport);
+  const toClose = tasks.filter((t) => isDone(t) && !isClosed(t) && !needReport(t));
+  return { overdue, todayList, stale, report, toClose };
+}
+
+/* ---------- 렌더 ---------- */
+function badges(t) {
+  const b = [], td = today();
+  if (t.source === "ceo") b.push(`<span class="b blue">대표 지시</span>`);
+  if (t.assignee_name) b.push(`<span class="b">담당 ${esc(t.assignee_name)}</span>`);
+  if (!isDone(t)) b.push(`<span class="b">${ST[t.status]}</span>`);
+  if (t.due_date && !isClosed(t)) {
+    const d = dayNum(t.due_date) - dayNum(td);
+    b.push(d < 0 ? `<span class="b red">기한 ${-d}일 초과</span>` : d === 0 ? `<span class="b amber">오늘 마감</span>` : `<span class="b">D-${d} (${t.due_date.slice(5)})</span>`);
+  }
+  if (!isClosed(t) && !isDone(t)) { const s = staleDays(t); b.push(`<span class="b ${s >= STALE ? "amber" : ""}">${t.last_checked_at ? "확인 " + (s === 0 ? "오늘" : s + "일 전") : "미확인 " + s + "일"}</span>`); }
+  if (needReport(t)) b.push(`<span class="b red">보고 대기</span>`);
+  if (t.report_required && t.reported_at) b.push(`<span class="b green">보고 완료</span>`);
+  if (isClosed(t)) b.push(`<span class="b green">종결 ${t.closed_at.slice(0, 10)}</span>`);
+  else if (isDone(t)) b.push(`<span class="b green">완료</span>`);
+  return b.join("");
+}
+function card(t) {
+  const a = [];
+  if (!isClosed(t)) {
+    if (!isDone(t)) a.push(`<button data-a="check" data-id="${t.id}">✓ 확인</button><button data-a="done" data-id="${t.id}">완료</button>`);
+    if (needReport(t)) a.push(`<button data-a="report" data-id="${t.id}">보고함</button>`);
+    if (isDone(t) && !needReport(t)) a.push(`<button data-a="close" data-id="${t.id}">종결</button>`);
+  }
+  return `<div class="card"><div class="t" data-a="open" data-id="${t.id}">${esc(t.title)}</div><div class="badges">${badges(t)}</div><div class="acts">${a.join("")}</div></div>`;
+}
+const sec = (title, cls, list, emptyMsg) =>
+  `<section class="${cls}"><h2>${title} <span class="n">${list.length}</span></h2>${list.length ? list.map(card).join("") : `<div class="empty">${emptyMsg}</div>`}</section>`;
+
+function render() {
+  const v = $("#view"); $("#quick").hidden = tab === "settings" || tab === "closed";
+  $("#title").textContent = { home: "오늘 (" + today().slice(5).replace("-", "/") + ")", all: "전체 업무", closed: "종결 업무", settings: "설정" }[tab];
+  $("#whoList").innerHTML = [...new Set(tasks.map((t) => t.assignee_name).filter(Boolean))].map((n) => `<option value="${esc(n)}">`).join("");
+  if (tab === "home") {
+    const b = buckets();
+    v.innerHTML = sec("기한 초과", "red", b.overdue, "없음 👍") + sec("오늘 확인할 업무", "amber", b.todayList, "없음") +
+      sec("보고 대기 (대표님)", "blue", b.report, "없음") + sec(`장기 미확인 (${STALE}일↑)`, "amber", b.stale, "없음") +
+      sec("완료 · 종결 대기", "", b.toClose, "없음");
+  } else if (tab === "all") {
+    const open = tasks.filter((t) => !isClosed(t)).sort((a, b) => (a.due_date || "9999").localeCompare(b.due_date || "9999"));
+    v.innerHTML = sec("진행 중", "", open.filter((t) => !isDone(t)), "등록된 업무가 없습니다.") + sec("완료 (종결 전)", "", open.filter(isDone), "없음");
+  } else if (tab === "closed") {
+    v.innerHTML = sec("최종 종결", "", tasks.filter(isClosed).sort((a, b) => b.closed_at.localeCompare(a.closed_at)), "종결된 업무가 없습니다.");
+  } else {
+    v.innerHTML = `<div class="set"><b>백업</b><p>모든 업무와 처리이력을 파일로 저장합니다. 주 1회 권장.</p><button id="bkJson">JSON 백업 내려받기</button><button id="bkCsv">엑셀용 CSV 내려받기</button></div>
+      <div class="set"><b>계정</b><p>${DEMO ? "체험 모드(로그인 없음)" : "로그인 상태입니다."}</p>${DEMO ? `<button id="demoReset" class="danger">체험 데이터 삭제</button>` : `<button id="logout">로그아웃</button>`}</div>`;
+  }
+}
+
+/* ---------- 동작 ---------- */
+const find = (id) => tasks.find((t) => t.id === id);
+async function patch(id, p, msg) { await store.update(id, p); await load(); if (msg) toast(msg); }
+
+$("#view").addEventListener("click", (e) => {
+  const el = e.target.closest("[data-a]"); const id = el && el.dataset.id;
+  if (!el) { if (e.target.id === "bkJson") backup("json"); if (e.target.id === "bkCsv") backup("csv"); if (e.target.id === "logout") run(async () => { await store.logout(); location.reload(); }); if (e.target.id === "demoReset" && confirm("체험 데이터를 모두 지울까요?")) { localStorage.removeItem("demo_tasks"); localStorage.removeItem("demo_events"); load(); } return; }
+  const a = el.dataset.a;
+  run(async () => {
+    if (a === "open") openSheet(find(id));
+    if (a === "check") await patch(id, { last_checked_at: nowIso() }, "확인 처리됨");
+    if (a === "done") await patch(id, { status: "done", last_checked_at: nowIso() }, "완료 처리됨");
+    if (a === "report") await patch(id, { reported_at: nowIso() }, "보고 처리됨");
+    if (a === "close") await patch(id, { closed_at: nowIso() }, "종결 처리됨");
+  });
+});
+document.querySelectorAll("nav button").forEach((b) => b.addEventListener("click", () => { tab = b.dataset.tab; document.querySelectorAll("nav button").forEach((x) => x.classList.toggle("on", x === b)); render(); }));
+$("#btnRefresh").addEventListener("click", () => run(load));
+
+$("#quick").addEventListener("submit", (e) => {
+  e.preventDefault();
+  run(async () => {
+    const o = { title: $("#qTitle").value.trim(), source: $("#qCeo").checked ? "ceo" : "self", assignee_name: $("#qWho").value.trim(), due_date: $("#qDue").value || null, directive_date: $("#qCeo").checked ? today() : null, report_required: $("#qCeo").checked };
+    await store.create(o); e.target.reset(); $("#qCeo").checked = true; await load(); toast("등록됨");
+  });
+});
+
+/* ---------- 상세 시트 ---------- */
+const LBL = { title: "제목", status: "상태", due_date: "기한", next_check_date: "다음확인", assignee_name: "담당", source: "구분", directive_date: "지시일", report_required: "보고필요", detail: "상세내용" };
+const EV = { created: "등록", updated: "수정", checked: "확인", completed: "완료", uncompleted: "완료 취소", closed: "최종 종결", reopened: "종결 취소", report: "대표님 보고", deleted: "삭제", restored: "복구", note: "메모" };
+function evText(e) {
+  const c = e.changes || {}; const parts = Object.keys(c).filter((k) => k !== "title" || e.type !== "created").map((k) => k === "detail" ? "상세내용 수정" : `${LBL[k] || k}: ${esc(fmtV(k, c[k][0]))} → ${esc(fmtV(k, c[k][1]))}`);
+  if (e.type === "created") parts.push(esc(c.title || ""));
+  return `<div><b>${EV[e.type] || e.type}</b> ${fmtDT(e.created_at)} ${parts.join(" · ")} ${esc(e.note)}</div>`;
+}
+const fmtV = (k, v) => (v === null || v === "" || v === undefined ? "없음" : k === "status" ? ST[v] || v : k === "source" ? SRC[v] || v : k === "report_required" ? (v ? "예" : "아니오") : v);
+
+async function openSheet(t) {
+  const f = $("#sheetForm"); const ev = await store.events(t.id); const o = (m, cur) => Object.entries(m).map(([k, v]) => `<option value="${k}" ${k === cur ? "selected" : ""}>${v}</option>`).join("");
+  f.innerHTML = `
+    <label>제목<input name="title" value="${esc(t.title)}" required></label>
+    <label>상세내용<textarea name="detail">${esc(t.detail)}</textarea></label>
+    <div class="g2"><label>구분<select name="source">${o(SRC, t.source)}</select></label><label>상태<select name="status">${o(ST, t.status)}</select></label></div>
+    <div class="g2"><label>지시일<input type="date" name="directive_date" value="${t.directive_date || ""}"></label><label>처리기한<input type="date" name="due_date" value="${t.due_date || ""}"></label></div>
+    <div class="g2"><label>담당자(타 직원)<input name="assignee_name" value="${esc(t.assignee_name)}" list="whoList"></label><label>다음 확인 예정일<input type="date" name="next_check_date" value="${t.next_check_date || ""}"></label></div>
+    <label class="chk"><input type="checkbox" name="report_required" ${t.report_required ? "checked" : ""}> 대표님 보고 필요 ${t.reported_at ? "(보고 " + fmtDT(t.reported_at) + ")" : ""}</label>
+    <div class="bar"><button class="primary" value="save">저장</button><button type="button" id="sCheck">✓ 오늘 확인</button>
+      ${t.report_required && !t.reported_at ? `<button type="button" id="sReport">보고함</button>` : ""}
+      ${isDone(t) && !isClosed(t) ? `<button type="button" id="sClose">최종 종결</button>` : ""}${isClosed(t) ? `<button type="button" id="sReopen">종결 취소</button>` : ""}
+      <button type="button" id="sCancel">닫기</button></div>
+    <label>메모 추가(이력에 남음)<div class="bar"><input id="sNote" placeholder="예: 김대리에게 재확인 요청"><button type="button" id="sNoteBtn">추가</button></div></label>
+    <div class="hist"><b>처리이력</b>${ev.map(evText).join("") || "<div>이력 없음</div>"}</div>
+    <button type="button" id="sDel" class="danger">삭제(이력은 보존)</button>`;
+  const dlg = $("#sheet"); dlg.showModal();
+  const act = (id, fn) => f.querySelector(id)?.addEventListener("click", () => run(async () => { await fn(); dlg.close(); await load(); }));
+  f.querySelector("#sCancel").onclick = () => dlg.close();
+  act("#sCheck", () => store.update(t.id, { last_checked_at: nowIso() }));
+  act("#sReport", () => store.update(t.id, { reported_at: nowIso() }));
+  act("#sClose", () => store.update(t.id, { closed_at: nowIso() }));
+  act("#sReopen", () => store.update(t.id, { closed_at: null }));
+  act("#sDel", async () => { if (!confirm("삭제할까요? (이력은 보존됩니다)")) throw new Error("취소됨"); await store.update(t.id, { deleted_at: nowIso() }); });
+  f.querySelector("#sNoteBtn").onclick = () => run(async () => { const v = f.querySelector("#sNote").value.trim(); if (!v) return; await store.note(t.id, v); dlg.close(); openSheet(find(t.id)); });
+  f.onsubmit = (e) => { e.preventDefault(); run(async () => {
+    const d = new FormData(f); const p = {};
+    for (const k of ["title", "detail", "source", "status", "assignee_name"]) p[k] = (d.get(k) || "").toString().trim();
+    for (const k of ["directive_date", "due_date", "next_check_date"]) p[k] = d.get(k) || null;
+    p.report_required = d.get("report_required") === "on";
+    if (p.status !== "done") p.closed_at = null;
+    await store.update(t.id, p); dlg.close(); await load(); toast("저장됨");
+  }); };
+}
+
+/* ---------- 백업 ---------- */
+function download(name, text, type) { const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([text], { type })); a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000); }
+function backup(kind) {
+  run(async () => {
+    const all = await store.exportAll(); const stamp = ymd(new Date());
+    if (kind === "json") return download(`업무백업_${stamp}.json`, JSON.stringify(all, null, 1), "application/json");
+    const cols = ["title", "source", "status", "assignee_name", "directive_date", "due_date", "last_checked_at", "next_check_date", "report_required", "reported_at", "completed_at", "closed_at", "created_at", "detail"];
+    const q = (v) => { let s = String(v ?? ""); if (/^[=+\-@]/.test(s)) s = "'" + s; return `"${s.replace(/"/g, '""')}"`; };
+    download(`업무목록_${stamp}.csv`, "﻿" + [cols.join(","), ...all.tasks.map((t) => cols.map((c) => q(t[c])).join(","))].join("\r\n"), "text/csv");
+  });
+}
+
+/* ---------- 시작 ---------- */
+async function start() {
+  
+  $("#demoBar").hidden = !DEMO;
+  if (await store.session()) { $("#app").hidden = false; await run(load); }
+  else $("#login").hidden = false;
+  
+}
+$("#loginForm").addEventListener("submit", async (e) => {
+  e.preventDefault(); $("#lErr").textContent = "";
+  try { await store.login($("#lEmail").value.trim(), $("#lPw").value); $("#login").hidden = true; $("#app").hidden = false; await load(); }
+  catch (err) { $("#lErr").textContent = (err.code || "").startsWith("auth/") ? "로그인 실패: 이메일/비밀번호를 확인하세요." : err.message; }
+});
+start();
+</script>
+</body>
+</html>
